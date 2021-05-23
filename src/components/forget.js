@@ -29,13 +29,13 @@ class Forget extends Component {
         }
       })
       .then((response) =>{
-        console.log(response.data.data.token);
+        
         const token = response.data.data.token;
         localStorage.setItem("token1",token);
         this.setState({reset:true})
         })
       .catch(function (error) {
-        console.log(error);
+        
         }); 
      };
 

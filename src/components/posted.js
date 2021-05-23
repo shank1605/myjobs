@@ -21,29 +21,29 @@ function Posted ()  {
     const head={
       headers: { Authorization: localStorage.getItem("token")}
     }
-    console.log(localStorage.getItem("token"))
+    
     axios.get(`/recruiters/jobs/${id}/candidates`,head)
     .then((response) =>{
-     console.log(response.data.data);
+     
     setapp(response.data.data);
      })
    .catch(function (error) {
-      console.log(error);
+     
    })
   }
 
 
   useEffect(()=>{
     const head={headers: { Authorization: localStorage.getItem("token")}}
-    console.log(localStorage.getItem("token"));
+    
     axios.get('/recruiters/jobs',head)
     .then((response) =>{
-     console.log(response.data.data.data);
+    console.log() 
      setdata(response.data.data.data);
     },[])
    .catch(function (error) {
   
-     console.log(error);
+    
    })
   },[])
 
@@ -65,7 +65,7 @@ if(token==null){
     <div className="navbar3">
       <div className="container">
         <div className="row nav5">
-          <div className="col-lg-6 col-sm-12 mt-3">
+          <div className="col-6 mt-3">
               <span style ={{color:"white"}}>My</span><span style={{color:"#43AFFF"}}>Jobs</span>
           </div>
           <div className="col-6 mt-2 logout ">
@@ -114,7 +114,7 @@ return(
           <Modal.Title>Applicants for this Job</Modal.Title>
           
         </Modal.Header>
-        &nbsp;&nbsp;&nbsp;Total&nbsp;{app.length}&nbsp;Applicants
+        &nbsp;&nbsp;&nbsp;Total&nbsp;&nbsp;Applicants
         <Modal.Body>
 <>
 {app.map((a)=>{

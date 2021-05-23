@@ -15,11 +15,11 @@ function Applied ()  {
     const head={headers: { Authorization: localStorage.getItem("token")}}
     axios.get('/candidates/jobs/applied',head)
     .then((response) =>{
-     console.log(response);
+     
      setdata(response.data.data);
     })
    .catch(function (error) {
-    console.log(error);
+    
    })
   },[])
 

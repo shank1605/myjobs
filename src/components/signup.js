@@ -51,13 +51,7 @@ class Signup extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-console.log("enter");
-    console.log(this.state.firstName);
-    console.log(this.state.who);
-    console.log(this.state.email);
-    console.log(this.state.password1);
-    console.log(this.state.pasword);
-    console.log(this.state.skills);
+
 
     if (formValid(this.state)) {
       
@@ -69,7 +63,7 @@ console.log("enter");
         name:this.state.firstName,
         skills:this.state.skills
       }
-      console.log(data);
+      
       
         const head={
           headers: { "Content-Type": "application/json; charset=UTF-8" }
@@ -78,12 +72,12 @@ console.log("enter");
 
         axios.post('/auth/register',data,head)
         .then((response) =>{
-          console.log(response);
+          
           
 
         })
         .catch(function (error) {
-          console.log(error);
+          
         });
 
         alert("SignUp successfully");

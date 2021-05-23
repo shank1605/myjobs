@@ -58,19 +58,19 @@ handleSubmit = (e) => {
         description:this.state.Description,
         location:this.state.Location
       } 
-      console.log(data)
+      
       
       const head={
         headers: { Authorization: localStorage.getItem("token")}
       }
        axios.post('/jobs/',data,head)
           .then((response) =>{
-        console.log(response);
+        
         this.setState({jobs:true})
         alert("Successfully Posted")
         })
       .catch(function (error) {
-        console.log(error);
+      
       })
     }
     else 

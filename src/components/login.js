@@ -51,8 +51,7 @@ class Login extends Component {
         axios.post('/auth/login',data,head)
         .then((response) =>{
           this.setState({correct:true})
-          console.log(response.data.data.userRole);
-          console.log(response.data.data.token)
+         
           const role=response.data.data.userRole;
           const token = response.data.data.token;
           localStorage.setItem("token",token);
@@ -63,7 +62,7 @@ class Login extends Component {
           alert("login Successfully");
            })
         .catch(function (error) {
-          console.log(error);
+          
           alert("Incorrect Email or Password ")
           });
         } else {
@@ -102,7 +101,7 @@ class Login extends Component {
       return <Redirect to="/job"/>;
     }
     
-console.log(this.state.formErrors);
+
     return (
 
       <div>

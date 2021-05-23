@@ -54,21 +54,21 @@ class Reset extends Component {
     e.preventDefault();
 if (formValid(this.state)) {
 const token = localStorage.getItem("token1")
-console.log(token);
+
       const data={
         password:this.state.password,
         confirmPassword:this.state.password1,
         token:token
       }
-      console.log(data)
+     
       axios.post('/auth/resetpassword',data)
       .then((response) =>{
-        console.log(response);
+        
         this.setState({login :true})
         alert("Password Reset Successfully")
         })
       .catch(function (error) {
-        console.log(error);
+        
         });
       
       } else {

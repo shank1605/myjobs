@@ -22,11 +22,11 @@ const [id,setid]=useState("")
 useEffect(()=>{
   axios.get('/jobs')
   .then((response) =>{
-   console.log(response.data.data);
+
    setdata(response.data.data);
    })
  .catch(function (error) {
-    console.log(error);
+    
   })},[])
 
   if(home1){
@@ -34,20 +34,22 @@ useEffect(()=>{
  }
 const submit=(i)=>{
   setid(i);
-  console.log(id);
+  
   const data={
   jobId:id
   }
-console.log(data);
+
   const head={headers: { Authorization: localStorage.getItem("token")}}
-  console.log(localStorage.getItem("token"))
+  
   axios.post('/candidates/jobs',data,head)
   .then((response) =>{
     console.log(response);
+    
    alert("Applied Successfully")
     })
   .catch(function (error) {
-    console.log(error);
+    alert(" Already Applied")
+  
   });
   }
   const token=localStorage.getItem("token");
