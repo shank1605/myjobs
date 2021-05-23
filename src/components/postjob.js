@@ -120,7 +120,7 @@ handleSubmit = (e) => {
   render() {
     const { formErrors } = this.state;
     if(this.state.home){
-      return <Redirect to="/home"/>
+      return <Redirect to="/"/>
     }
     if(this.state.jobs){
       return <Redirect to="/post"/>
@@ -128,7 +128,7 @@ handleSubmit = (e) => {
 
 const token=localStorage.getItem("token");
 if(token==null){
-  return <Redirect to="/home"/>
+  return <Redirect to="/"/>
 
 }
     

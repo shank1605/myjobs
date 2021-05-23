@@ -30,7 +30,7 @@ useEffect(()=>{
   })},[])
 
   if(home1){
-   return <Redirect to="/home"/>
+   return <Redirect to="/"/>
  }
 const submit=(i)=>{
   setid(i);
@@ -52,7 +52,7 @@ console.log(data);
   }
   const token=localStorage.getItem("token");
   if(token==null){
-    return <Redirect to="/home"/>
+    return <Redirect to="/"/>
   
   }
 

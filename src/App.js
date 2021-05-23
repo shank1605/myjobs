@@ -49,7 +49,7 @@ class App extends Component {
 
       
       <Switch>
-        <Route path="/home">
+        <Route exact path="/">
         <Home />
       </Route>
       <Route path="/login">

@@ -50,11 +50,11 @@ function Posted ()  {
 
 
 if(home1){
-  return <Redirect to="/home"/>
+  return <Redirect to="/"/>
 }
 const token=localStorage.getItem("token");
 if(token==null){
-  return <Redirect to="/home"/>
+  return <Redirect to="/"/>
 
 }
  
